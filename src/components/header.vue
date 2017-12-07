@@ -1,0 +1,67 @@
+<template>
+  <nav class="codrops-demos">
+    <a @click="changeDemo()" class="current-demo" href="javascript:;">Demo 1</a>
+    <a @click="changeDemo('demo2')" href="javascript:;">Demo 2</a>
+  </nav>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+      changeDemo: function (demo) {
+        switch (demo) {
+          case 'demo2': {
+            this.$router.push("demo2")
+          }; break;
+          default: {
+            this.$router.push("/")
+          }
+        }
+      }
+    }
+  }
+</script>
+<style lang="less">
+  .codrops-demos {
+    font-size: 0.8em;
+    text-align: center;
+    position: absolute;
+    z-index: 99;
+    width: 96%;
+  }
+  .codrops-demos a {
+    display: inline-block;
+    margin: 0.35em 0.1em;
+    padding: 0.5em 1.2em;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border-radius: 2px;
+    font-size: 110%;
+    border: 2px solid transparent;
+    color: #fff;
+  }
+  .codrops-demos a:hover, .codrops-demos a.current-demo {
+    border-color: #383a3c;
+  }
+  .codrops-demos a {
+    display: inline-block;
+    margin: 0.35em 0.1em;
+    padding: 0.5em 1.2em;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border-radius: 2px;
+    font-size: 110%;
+    border: 2px solid transparent;
+    color: #fff;
+  }
+</style>
